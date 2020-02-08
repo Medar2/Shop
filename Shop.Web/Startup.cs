@@ -39,7 +39,8 @@ namespace Shop.Web
                  cfg.Password.RequireUppercase = false;
                  cfg.Password.RequiredLength = 6;
 
-             });
+             })
+                .AddEntityFrameworkStores<DataContext>();
             services.AddDbContext<DataContext>(cfg =>
                 {
                 cfg.UseSqlServer(this.Configuration.GetConnectionString("DefaultConnection"));
